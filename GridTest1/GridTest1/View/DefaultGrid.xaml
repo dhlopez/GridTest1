@@ -6,19 +6,27 @@
   
   
         
-  <Grid>
+  <Grid BackgroundColor="#000">
     <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="0.3*"/>
+      <RowDefinition Height="0.3*"/>
+      <RowDefinition Height="0.3*"/>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width ="0.5*"/>
       <ColumnDefinition Width ="0.5*"/>
     </Grid.ColumnDefinitions>
-    <Label Grid.Row="0" x:Name="d00" Text="Binding I, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0"/>
-    <Label Grid.Row="0" x:Name="d01" Text="Row0Column1" Grid.Column="1"/>
-    <Label Grid.Row="1" x:Name="d10" Text="Binding I, UpdateSourceTrigger=PropertyChanged}" Grid.Column="0"/>
-    <Image Grid.Row="1" x:Name="img1" Grid.Column="1" Source="test_grid_img.jpg" BindingContext=""/>
+    <!--
+    <Label Grid.Row="0" x:Name="d00" Text="Welcome" Grid.Column="0" TextColor="#fff"/>
+    <Label Grid.Row="0" x:Name="d01" Text="Wack" Grid.Column="1" TextColor="#fff"/>
+    <Label Grid.Row="1" x:Name="d10" Text="Result" Grid.Column="0" TextColor="#fff"/>
+    -->
+    <Image Grid.Row="0" x:Name="img1" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#D7FDF0"/>
+    <Image Grid.Row="0" x:Name="img2" Grid.Column="1" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#B2FFD6"/>
+    <Image Grid.Row="1" x:Name="img3" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#B4D6D3"/>
+    <Image Grid.Row="1" x:Name="img4" Grid.Column="1" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#B8BAC8"/>
+    <Image Grid.Row="2" x:Name="img5" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#AA78A6"/>
+    <Image Grid.Row="2" x:Name="img6" Grid.Column="1" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#fff"/>
     <!---<Label Grid.Row="1" x:Name="d11" Text="Row1Column1" Grid.Column="1"/>-->
   </Grid>
 </ContentPage>
