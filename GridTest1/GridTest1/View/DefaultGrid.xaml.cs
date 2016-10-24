@@ -13,10 +13,12 @@ namespace GridTest1.View
     public partial class DefaultGrid : ContentPage, INotifyPropertyChanged
     {
         int i = 0;
+        List<Image> images;
+
         public DefaultGrid()
         {
             InitializeComponent();
-            
+            images = new List<Image>() { img1, img2, img3, img4, img5, img6 };
             var imgTapEvent1 = new TapGestureRecognizer();
             var imgTapEvent2 = new TapGestureRecognizer();
             var imgTapEvent3 = new TapGestureRecognizer();
@@ -24,19 +26,19 @@ namespace GridTest1.View
             var imgTapEvent5 = new TapGestureRecognizer();
             var imgTapEvent6 = new TapGestureRecognizer();
             //List<Action> imgMethods = new List<Action>() { methodImg(List<Image>)};
-            List<Image> images = new List<Image>() { img1, img2, img3, img4, img5, img6};
+            
 
             /*foreach (Image img in images)
             {
                 imgTapEvent.Tapped += (sender, e) => methodImg(object sender, EventArgs args);
                 img.GestureRecognizers.Add(imgTapEvent);
             }*/
-            imgTapEvent1.Tapped += (sender, e) => methodImg1();
-            imgTapEvent2.Tapped += (sender, e) => methodImg2();
-            imgTapEvent3.Tapped += (sender, e) => methodImg3();
-            imgTapEvent4.Tapped += (sender, e) => methodImg4();
-            imgTapEvent5.Tapped += (sender, e) => methodImg5();
-            imgTapEvent6.Tapped += (sender, e) => methodImg6();
+            imgTapEvent1.Tapped += (sender, e) => methodImg(((Image)sender));
+            imgTapEvent2.Tapped += (sender, e) => methodImg(((Image)sender));
+            imgTapEvent3.Tapped += (sender, e) => methodImg(((Image)sender));
+            imgTapEvent4.Tapped += (sender, e) => methodImg(((Image)sender));
+            imgTapEvent5.Tapped += (sender, e) => methodImg(((Image)sender));
+            imgTapEvent6.Tapped += (sender, e) => methodImg(((Image)sender));
 
             img1.GestureRecognizers.Add(imgTapEvent1);
             img2.GestureRecognizers.Add(imgTapEvent2);
@@ -46,71 +48,43 @@ namespace GridTest1.View
             img6.GestureRecognizers.Add(imgTapEvent6);
             StartTimer();
         }
-
-        void methodImg()
+        void methodImg(Image img)
         {
-            i++;
-            Opacity = 0;
-            //this.d10.Text = i.ToString();
-            //await DisplayAlert("Title", i+"", "OK");
+            //string x = sender.StyleId;
+            //if(img.StyleId.Equals("img1"))
+            int imgName = Convert.ToInt16(img.Opacity);
+            if (imgName > 0)
+            {
+                img.Opacity = 0;
+            }
+            if (imgName <= 0)
+            {
+                img.Opacity = 1;
+            }
+           
+            /*
+            foreach(Image img in images)
+            {
+                if (img.StyleId != null && img.Opacity == 0)
+                {
+                    img.Opacity = 100;
+                }
+                if (img.StyleId != null && img.Opacity == 100)
+                {
+                    img.Opacity = 0;
+                }
+            }
+            */
         }
-        void methodImg1()
-        {
-            i++;
-            if (img1.Opacity == 0)
-                img1.Opacity = 100;
-            else
-                img1.Opacity = 0;
-            //this.d10.Text = i.ToString();
-            //await DisplayAlert("Title", i+"", "OK");
-        }
-        void methodImg2()
-        {
-            if (img2.Opacity == 0)
-                img2.Opacity = 100;
-            else
-                img2.Opacity = 0;
-            //this.d10.Text = i.ToString();
-            //await DisplayAlert("Title", i+"", "OK");
-        }
-        void methodImg3()
-        {
-            if (img3.Opacity == 0)
-                img3.Opacity = 100;
-            else
-                img3.Opacity = 0;
-            //this.d10.Text = i.ToString();
-            //await DisplayAlert("Title", i+"", "OK");
-        }
-        void methodImg4()
-        {
-            i++;
-            if (img4.Opacity == 0)
-                img4.Opacity = 100;
-            else
-                img4.Opacity = 0;
-            //this.d10.Text = i.ToString();
-            //await DisplayAlert("Title", i+"", "OK");
-        }
-        void methodImg5()
-        {
-            if (img5.Opacity == 0)
-                img5.Opacity = 100;
-            else
-                img5.Opacity = 0;
-            //this.d10.Text = i.ToString();
-            //await DisplayAlert("Title", i+"", "OK");
-        }
+        /*
         void methodImg6()
         {
             if (img6.Opacity == 0)
                 img6.Opacity = 100;
             else
                 img6.Opacity = 0;
-            //this.d10.Text = i.ToString();
-            //await DisplayAlert("Title", i+"", "OK");
         }
-
+        */
         public void StartTimer()
         {
             int number = 0;

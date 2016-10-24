@@ -25,12 +25,12 @@
     <Label Grid.Row="0" x:Name="time" Text="Timer" Grid.Column="0" TextColor="#fff" VerticalTextAlignment="End"/>
     <Label Grid.Row="0" x:Name="result" Text="Result" Grid.Column="1" TextColor="#fff" VerticalTextAlignment="End"/>
     <!--test_grid_img-->
-    <Image Grid.Row="1" x:Name="img1" Grid.Column="0" Source="a.jpg" BindingContext="" BackgroundColor="#D7FDF0"/>
-    <Image Grid.Row="1" x:Name="img2" Grid.Column="1" Source="a.jpg" BindingContext="" BackgroundColor="#B2FFD6"/>
-    <Image Grid.Row="2" x:Name="img3" Grid.Column="0" Source="a.jpg" BindingContext="" BackgroundColor="#B4D6D3"/>
-    <Image Grid.Row="2" x:Name="img4" Grid.Column="1" Source="a.jpg" BindingContext="" BackgroundColor="#B8BAC8"/>
-    <Image Grid.Row="3" x:Name="img5" Grid.Column="0" Source="a.jpg" BindingContext="" BackgroundColor="#AA78A6"/>
-    <Image Grid.Row="3" x:Name="img6" Grid.Column="1" Source="a.jpg" BindingContext="" BackgroundColor="#fff"/>
+    <Image Grid.Row="1" x:Name="img1" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#D7FDF0" StyleId="img1"/>
+    <Image Grid.Row="1" x:Name="img2" Grid.Column="1" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#B2FFD6" StyleId="img2"/>
+    <Image Grid.Row="2" x:Name="img3" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#B4D6D3" StyleId="img3"/>
+    <Image Grid.Row="2" x:Name="img4" Grid.Column="1" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#B8BAC8" StyleId="img4"/>
+    <Image Grid.Row="3" x:Name="img5" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#AA78A6" StyleId="img5"/>
+    <Image Grid.Row="3" x:Name="img6" Grid.Column="1" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#fff" StyleId="img6"/>
     <!---<Label Grid.Row="1" x:Name="d11" Text="Row1Column1" Grid.Column="1"/>-->
   </Grid>
 </ContentPage>
