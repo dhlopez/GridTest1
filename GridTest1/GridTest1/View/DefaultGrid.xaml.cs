@@ -4,8 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Threading.Tasks;
-
+using System.Diagnostics;
+using System.Threading;
 using Xamarin.Forms;
 
 namespace GridTest1.View
@@ -16,6 +16,7 @@ namespace GridTest1.View
         public DefaultGrid()
         {
             InitializeComponent();
+            
             var imgTapEvent1 = new TapGestureRecognizer();
             var imgTapEvent2 = new TapGestureRecognizer();
             var imgTapEvent3 = new TapGestureRecognizer();
@@ -43,6 +44,7 @@ namespace GridTest1.View
             img4.GestureRecognizers.Add(imgTapEvent4);
             img5.GestureRecognizers.Add(imgTapEvent5);
             img6.GestureRecognizers.Add(imgTapEvent6);
+            StartTimer();
         }
 
         void methodImg()
@@ -107,6 +109,22 @@ namespace GridTest1.View
                 img6.Opacity = 0;
             //this.d10.Text = i.ToString();
             //await DisplayAlert("Title", i+"", "OK");
+        }
+
+        public void StartTimer()
+        {
+            int number = 0;
+            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
+                number++;
+                if (number <= 60)
+                {
+                    //this.time.Text = number.ToString();
+                    this.time.Text = TimeSpan.FromSeconds(number).ToString();
+                    return true; 
+                }
+                return false;
+
+            });
         }
     }
 }

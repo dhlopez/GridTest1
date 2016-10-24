@@ -47,7 +47,6 @@
   <ItemGroup>
     <EmbeddedResource Include="View\DefaultGrid.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
