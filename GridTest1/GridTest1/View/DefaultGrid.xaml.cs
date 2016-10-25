@@ -46,7 +46,8 @@ namespace GridTest1.View
             img4.GestureRecognizers.Add(imgTapEvent4);
             img5.GestureRecognizers.Add(imgTapEvent5);
             img6.GestureRecognizers.Add(imgTapEvent6);
-            StartTimer();
+            
+            //StartTimer(int);
         }
         void methodImg(Image img)
         {
@@ -85,12 +86,12 @@ namespace GridTest1.View
                 img6.Opacity = 0;
         }
         */
-        public void StartTimer()
+        public void StartTimer(int interval)
         {
             int number = 0;
-            Device.StartTimer(TimeSpan.FromSeconds(1), () => {
+            Device.StartTimer(TimeSpan.FromSeconds(interval), () => {
                 number++;
-                if (number <= 60)
+                if (number <= interval)
                 {
                     //this.time.Text = number.ToString();
                     this.time.Text = TimeSpan.FromSeconds(number).ToString();
@@ -99,6 +100,26 @@ namespace GridTest1.View
                 return false;
 
             });
+        }
+
+        public void Pattern()
+        {
+            int initial = 3;
+            List<string> options = new List<string>() { "img1", "img2", "img3", "img4", "img5", "img6" };
+            List<string> pattern = new List<string>();
+            //populate pattern list
+            int i = 0;
+            while (true)
+            {
+                Random rnd = new Random();
+                int optionNumber = rnd.Next(0, 5);
+                pattern.Add(options[optionNumber]);
+                i++;
+                if (i >= 3)
+                {
+                    //start game
+                }
+            }
         }
     }
 }
