@@ -7,6 +7,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading;
 using Xamarin.Forms;
+using System.Threading.Tasks;
 
 namespace GridTest1.View
 {
@@ -64,16 +65,15 @@ namespace GridTest1.View
                 }
             }
             //StartTimer(int);
-            
+            Pattern(3);
         }
 
-        void methodImg(object sender)
+        public void methodImg(object sender)
         {
             //Pattern(3);
-            img2.Opacity = 1;
-            StartTimer(6);
-            img4.Opacity = 1;
-
+            //StartTimer(6);
+            //await Task.Delay(2500);
+            
             //string x = sender.StyleId;
             //if(img.StyleId.Equals("img1"))
 
@@ -98,17 +98,15 @@ namespace GridTest1.View
                 {
                     //this.time.Text = number.ToString();
                     this.time.Text = TimeSpan.FromSeconds(number).ToString();
-                    img3.Opacity = 1;
                     return true; 
                 }
                 return false;
-
             });
         }
 
         public static List<string> pattern = new List<string>();
 
-        void Pattern(int initial)
+        async void Pattern(int initial)
         {
             List<string> options = new List<string>() { "img1", "img2", "img3", "img4", "img5", "img6" };
             //List<string> pattern = new List<string>();
@@ -129,22 +127,21 @@ namespace GridTest1.View
             
             foreach (string opt in pattern)
             {
-                foreach(Image img in images)
+                start.Text += opt;
+                foreach (Image img in images)
                 if (img.StyleId.Equals(opt))
                 {
                     img.Opacity = 1;
-                    StartTimer(5);
-                    //img.Opacity = 0;
-                }
+                    await Task.Delay(2000);
+                    img.Opacity = 0;
+                    await Task.Delay(500);
+               }
             }
-            if (i >= 3)
-            {
-                //start game
-            }
+            StartTimer(60);
         }
+        Random rnd = new Random();
         public int GetNumber()
         {
-            Random rnd = new Random();
             int optionNumber = rnd.Next(0, 5);
             return optionNumber;
         }
