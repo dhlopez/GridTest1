@@ -13,8 +13,8 @@ namespace GridTest1
         public App()
         {
             // The root page of your application
-            MainPage = new DefaultGrid();
-            //MainPage = new ContentPage
+            
+            MainPage = new NavigationPage(new Menu());
             /*{
                 Content = new StackLayout
                 {

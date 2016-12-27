@@ -29,14 +29,24 @@
     <Image Grid.Row="6" x:Name="img5" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#AA78A6" StyleId="img5"/>
     <Image Grid.Row="6" x:Name="img6" Grid.Column="2" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#fff" StyleId="img6"/>
     <Button Grid.Row="7" x:Name="Restart" Text="Restart" Grid.Column="0" BindingContext="" BackgroundColor="#fff"/>
-    <Button Grid.Row="7" x:Name="Quit" Text="Quit" Grid.Column="2" BindingContext="" BackgroundColor="#fff" />
+    <Button Grid.Row="7" x:Name="Quit" Clicked="quitEvent" Text="Quit" Grid.Column="2" BindingContext="" BackgroundColor="#fff" />
     <!---<Label Grid.Row="1" x:Name="d11" Text="Row1Column1" Grid.Column="1"/>-->
     <BoxView Grid.Column="1" BackgroundColor="#fff" WidthRequest="1" VerticalOptions="FillAndExpand" HorizontalOptions="End" Grid.RowSpan="7"/>
     <BoxView Grid.Row="1" BackgroundColor="#fff" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="3"/>
     <BoxView Grid.Row="3" BackgroundColor="#fff" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="3"/>
     <BoxView Grid.Row="5" BackgroundColor="#fff" HeightRequest="1" VerticalOptions="End" HorizontalOptions="FillAndExpand" Grid.ColumnSpan="3"/>
-    <ContentView x:Name="contentView" Grid.RowSpan="7" Grid.ColumnSpan="3" BackgroundColor="Yellow" IsVisible="False" Opacity="0.3" IsEnabled="False">
-      <Button Text="Text" IsEnabled="False" IsVisible="False"/>
+    <ContentView x:Name="contentView" Grid.RowSpan="7" Grid.ColumnSpan="3" BackgroundColor="Yellow" IsVisible="True" Opacity="0.3" IsEnabled="False">
+      <Grid x:Name="Instructions" HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width ="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0"  x:Name="InsText" Text="Moles will appear first, then is your turn to mimic the order." Grid.Column="0" VerticalTextAlignment="End" HorizontalOptions="FillAndExpand"/>
+        <Button Text="Start" Grid.Column="0" Grid.Row="1" IsEnabled="True" IsVisible="True"/>
+      </Grid>
     </ContentView> 
     </Grid>
 

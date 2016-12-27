@@ -178,7 +178,7 @@ namespace GridTest1.View
             startEvent.Tapped += (sender, e) => methodImg(sender);
 
             restart.Tapped += (sender, e) => restartEvent();
-            quit.Tapped += (sender, e) => quitEvent(sender);
+            quit.Tapped += (sender, e) => quitEvent(sender, e);
 
             img1.GestureRecognizers.Add(imgTapEvent1);
             img2.GestureRecognizers.Add(imgTapEvent2);
@@ -208,9 +208,9 @@ namespace GridTest1.View
 
             Pattern(3);
         }
-        public void quitEvent(object sender)
+        private void quitEvent(object sender, EventArgs args)
         {
-
+           Navigation.PushAsync(new Menu());
         }
     }
 }
