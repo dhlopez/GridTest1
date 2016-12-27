@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridTest1.View.FadeTest">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <Grid x:Name="GridImg" BackgroundColor="#000" HorizontalOptions="FillAndExpand">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width ="0.5*"/>
+      <ColumnDefinition Width ="0.01*"/>
+      <ColumnDefinition Width ="0.5*"/>
+    </Grid.ColumnDefinitions>
+    <!--test_grid_img-->
+    <Image Grid.Row="0" x:Name="img1" Grid.Column="0" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#D7FDF0" Opacity="1"  StyleId="img1"/>
+    <Image Grid.Row="0" x:Name="img2" Grid.Column="2" Source="test_grid_img.jpg" BindingContext="" BackgroundColor="#B2FFD6" Opacity="1" StyleId="img2"/>
+    <!---<Label Grid.Row="1" x:Name="d11" Text="Row1Column1" Grid.Column="1"/>-->
+    </Grid>
+
+
+</ContentPage>
